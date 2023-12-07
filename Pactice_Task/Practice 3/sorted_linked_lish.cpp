@@ -24,25 +24,7 @@ void insert_value(Node *&head, Node *&tail, int value)
     tail = new_node;
 }
 
-void find_mid(Node *head, int count)
-{
-    Node *tmp = head;
-    int middle = count / 2;
-    for (int i = 0; i < middle-1; i++)
-    {
-        tmp = tmp->next;
-    }
-
-    if (count % 2 == 1)
-    {
-        cout << tmp->next->value << endl;
-    }
-    else
-    {
-        cout << tmp->value << " " << tmp->next->value << endl;
-    }
-}
-void print_list(Node *head)
+void print_linked_list(Node *head)
 {
     Node *tmp = head;
     while (tmp != NULL)
@@ -56,7 +38,6 @@ int main()
     Node *head = NULL;
     Node *tail = NULL;
     int value;
-    int count = 0;
     while (true)
     {
         cin >> value;
@@ -64,9 +45,22 @@ int main()
         {
             break;
         }
-        count++;
         insert_value(head, tail, value);
     }
-    find_mid(head, count);
+    bool flag = true;
+    for (Node *i = head; i->next != NULL; i = i->next)
+    {
+        for (Node *j = i->next; j != NULL; j = j->next)
+        {
+            if (i->value > j->value)
+            {
+                flag = false;
+            }
+        }
+    }
+    if (flag == true)
+        cout << "YES" << endl;
+    else
+        cout << "NO" << endl;
     return 0;
 }

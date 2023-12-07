@@ -15,13 +15,12 @@ public:
 void insert_value(Node *&head, int value)
 {
     Node *newNode = new Node(value);
-
+    Node *tmp = head;
     if (head == NULL)
     {
         head = newNode;
         return;
     }
-    Node *tmp = head;
     while (tmp->next != NULL)
     {
         tmp = tmp->next;
@@ -30,27 +29,34 @@ void insert_value(Node *&head, int value)
     tmp->next = newNode;
 }
 
-void count_item(Node *head)
+void find_duplicate(Node *head)
 {
-    Node *tmp = head;
-    bool flag = true;
-    while (tmp != NULL)
+    Node *dulplicate = head;
+    bool flag = false;
+    while (dulplicate != NULL)
     {
-
-        if (tmp != tmp->next)
+        Node *tmp = dulplicate->next;
+        while (tmp != NULL)
         {
-            flag = false;
+            if (dulplicate->value == tmp->value)
+            {
+                flag = true;
+                break;
+            }
+            tmp = tmp->next;
+        }
+        if (flag == true)
+        {
             break;
         }
-        tmp = tmp->next;
+        dulplicate = dulplicate->next;
     }
-    cout << flag << endl;
-    // if (flag == 1)
-    //     cout << "YES" << endl;
-    // else
-    // {
-    //     cout << "NO";
-    // }
+    if (flag == true)
+    {
+        cout << "YES" << endl;
+    }
+    else
+        cout << "NO" << endl;
 }
 int main()
 {
@@ -66,6 +72,6 @@ int main()
 
         insert_value(head, value);
     }
-    count_item(head);
+    find_duplicate(head);
     return 0;
 }

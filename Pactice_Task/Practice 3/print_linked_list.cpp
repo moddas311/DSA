@@ -30,16 +30,16 @@ void insert_value(Node *&head, int value)
     tmp->next = newNode;
 }
 
-void count_item(Node *head)
+int count_item(Node *head)
 {
     Node *tmp = head;
-    int count = 0;
+    int cnt = 0;
     while (tmp != NULL)
     {
-        count = count + 1;
+        cnt++;
         tmp = tmp->next;
     }
-    cout << count << endl;
+    return cnt;
 }
 int main()
 {
@@ -55,6 +55,7 @@ int main()
 
         insert_value(head, value);
     }
-    count_item(head);
+    int count = count_item(head);
+    cout << count;
     return 0;
 }
