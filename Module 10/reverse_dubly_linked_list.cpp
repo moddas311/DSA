@@ -25,6 +25,7 @@ void reverse_list(Node *head, Node *tail)
         i = i->next;
         j = j->prev;
     }
+    swap(i->value, j->value);
 }
 
 // print listed
