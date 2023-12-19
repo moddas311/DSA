@@ -1,0 +1,1 @@
+{"name":"Local: copy_stack_using_stl","url":"d:\\DSA\\Pactice_Task\\Practice 6\\copy_stack_using_stl.cpp","tests":[{"id":1702969086483,"input":"5\n10 20 30 40 50","output":"10 20 30 40 50"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\DSA\\Pactice_Task\\Practice 6\\copy_stack_using_stl.cpp","group":"local","local":true}
