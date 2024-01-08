@@ -15,8 +15,8 @@ public:
     }
 };
 
-// pre oreder travarser function
-void inOrder(Node *root)
+// post oreder travarser function
+void postOrder(Node *root)
 {
 
     // base case
@@ -24,9 +24,9 @@ void inOrder(Node *root)
     {
         return;
     }
-    inOrder(root->left);
+    postOrder(root->left);
+    postOrder(root->right);
     cout << root->value << " ";
-    inOrder(root->right);
 }
 
 int main()
@@ -53,6 +53,6 @@ int main()
     d->right = g;
     h->right = i;
 
-    inOrder(root);
+    postOrder(root);
     return 0;
 }
