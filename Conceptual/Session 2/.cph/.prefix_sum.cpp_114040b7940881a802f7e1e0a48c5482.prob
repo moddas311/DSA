@@ -1,0 +1,1 @@
+{"name":"Local: prefix_sum","url":"d:\\DSA\\Conceptual\\Session 2\\prefix_sum.cpp","tests":[{"id":1703567775914,"input":"3\n6\n1 7 3 6 5 6\n3\n1 2 3\n3\n2 1 -1","output":"3\n-1\n0"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\DSA\\Conceptual\\Session 2\\prefix_sum.cpp","group":"local","local":true}
