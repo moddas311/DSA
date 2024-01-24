@@ -47,6 +47,7 @@ bool palindrome(Node *head, Node *tail)
     {
         return false;
     }
+    return true;
 }
 
 // print the value

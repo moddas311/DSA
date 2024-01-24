@@ -15,6 +15,7 @@ int main()
     }
 
     auto current = web_address.begin();
+
     int query;
     cin >> query;
     while (query--)
@@ -26,7 +27,9 @@ int main()
         {
             string visit_address;
             cin >> visit_address;
+
             auto it = find(web_address.begin(), web_address.end(), visit_address);
+
             if (it != web_address.end())
             {
                 current = it;
