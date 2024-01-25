@@ -1,25 +1,13 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-const int N = 10e+5;
-vector<int> v[N];
-bool isVisited[N];
+vector<int> v[1005];
+bool isVisited[1003];
 
 void dfs(int src)
 {
     cout << src << endl;
     isVisited[src] = true;
-
-   /*  
-   for (int i = 0; i < v[src].size(); i++)
-    {
-        int child = v[src][i];
-        if (!isVisited[child])
-        {
-            dfs(child);
-        }
-    } 
-    */
 
     for (int child : v[src])
     {
@@ -43,7 +31,19 @@ int main()
         v[b].push_back(a);
     }
 
+    int components = 0;
+
     memset(isVisited, false, sizeof(isVisited));
-    dfs(0);
+
+    for (int i = 0; i < n; i++)
+    {
+        if (!isVisited[i])
+        {
+            dfs(i);
+            components++;
+        }
+    }
+
+    cout << "Components- " << components << endl;
     return 0;
 }
